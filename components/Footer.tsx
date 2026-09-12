@@ -12,7 +12,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className='flex w-full items-center justify-between border-t border-white/10 py-5 text-sm text-gray-400'>
+    <footer id='contacto' className='flex w-full items-center justify-between border-t border-white/10 py-5 text-sm text-gray-400'>
       <button
         type='button'
         onClick={copyEmail}
