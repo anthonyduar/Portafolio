@@ -25,7 +25,7 @@ export default function HomePage() {
           <h1 className='text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl'>
             {title}
           </h1>
-          <div className='mt-6 max-w-lg text-center text-xs leading-5 text-white/45 md:mt-7'>
+          <div className='mt-6 max-w-lg text-center text-[14px] leading-5 text-white/45 md:mt-7'>
             <p>Creo experiencias digitales con ideas claras, historias que conectan y</p>
             <p>tecnología que funciona.</p>
           </div>
