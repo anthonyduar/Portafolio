@@ -7,6 +7,7 @@ const portfolioLinks = [
   ["Redacción", "/redaccion"],
   ["Marketing Digital", "/marketing"],
   ["Edición de Video", "/video"],
+  ["Diseño", "/diseno"],
   ["Motion Graphics", "/motion"],
   ["Desarrollo Web", "/web"],
 ];
@@ -34,16 +35,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className='mx-auto flex w-full max-w-6xl items-center justify-between gap-5 text-xs text-white/45'>
-      <Link href='/' aria-label='Inicio' className='flex size-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white text-sm font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)]'>✦</Link>
-      <nav className='hidden min-w-0 flex-1 items-center justify-center md:flex' aria-label='Navegación principal'>
-        <div className='flex max-w-4xl items-center gap-1 overflow-x-auto rounded-full border border-white/[0.1] bg-white/[0.025] px-3 py-2'>
-          {portfolioLinks.map(([label, href]) => <Link key={href} href={href} className='whitespace-nowrap rounded-full px-3 py-2 font-medium transition-colors hover:bg-white/[0.07] hover:text-white'>{label}</Link>)}
-          <Link href='#contacto' className='whitespace-nowrap rounded-full px-3 py-2 font-medium text-white/70 transition-colors hover:bg-white/[0.07] hover:text-white'>Contacto</Link>
+    <header className='mx-auto flex w-full max-w-6xl items-center justify-between gap-3 text-[9px] text-white/45 sm:gap-5'>
+      <div className='flex shrink-0 items-center gap-3'>
+        <Link href='/' aria-label='Inicio' className='flex size-7 items-center justify-center rounded-xl border border-white/10 bg-white text-xs font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)]'>▲</Link>
+        <Link href='/' className='hidden rounded-full border border-white/[0.1] px-4 py-2 font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white sm:block'>Portafolio</Link>
+      </div>
+      <nav className='min-w-0 flex-1' aria-label='Navegación principal'>
+        <div className='mx-auto flex w-fit max-w-full items-center gap-0 overflow-x-auto rounded-full border border-white/[0.1] bg-white/[0.025] px-2 py-1.5'>
+          {portfolioLinks.map(([label, href]) => <Link key={href} href={href} className='whitespace-nowrap rounded-full px-2 py-1.5 font-medium transition-colors hover:bg-white/[0.07] hover:text-white sm:px-3'>{label}</Link>)}
         </div>
       </nav>
-      <span className='hidden shrink-0 rounded-full border border-white/[0.08] px-4 py-2 font-medium text-white/55 lg:block'>{locationTime}</span>
-      <Link href='#contacto' className='shrink-0 rounded-full border border-white/[0.1] px-4 py-2 font-medium text-white/70 transition-colors hover:bg-white/[0.06] hover:text-white md:hidden'>Contacto</Link>
+      <Link href='#contacto' className='hidden shrink-0 rounded-full border border-white/[0.1] px-3 py-2 font-medium text-white/55 transition-colors hover:bg-white/[0.06] hover:text-white sm:block'>{locationTime}</Link>
     </header>
   );
 }

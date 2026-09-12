@@ -9,8 +9,8 @@ const categories = [
   ["Redacción", "/redaccion", "/img/redaccion.png"],
   ["Marketing Digital", "/marketing", "/img/marketing.png"],
   ["Edición de Video", "/video", "/img/edicion.png"],
-  ["Diseño", "/diseno", "/img/diseno.png"],
   ["Motion Graphics", "/motion", "/img/motion.png"],
+  ["Diseño", "/diseno", "/img/diseno.png"],
   ["Desarrollo Web", "/web", "/img/desarrollo.png"],
 ];
 
@@ -18,47 +18,48 @@ export default function HomePage() {
   const [title, setTitle] = useState("Anthony Duarte");
 
   return (
-    <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col overflow-hidden bg-[#0b0b0b] px-4 py-5 text-white md:px-12 md:py-7'>
+    <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col overflow-hidden bg-[#0b0b0b] px-4 py-2 text-white sm:px-6 md:px-12'>
       <Navbar />
-      <main className='flex flex-1 flex-col justify-center py-12 md:py-16'>
-        <div className='relative mx-auto flex w-full max-w-6xl flex-col items-center'>
-          <section className='pointer-events-none absolute inset-0 hidden md:block' aria-hidden='true'>
-            <span className='absolute left-0 top-[12%] h-px w-24 bg-white/10' />
-            <span className='absolute right-0 top-[12%] h-px w-24 bg-white/10' />
-            <span className='absolute bottom-[12%] left-8 h-px w-24 bg-white/10' />
-            <span className='absolute bottom-[12%] right-8 h-px w-24 bg-white/10' />
-          </section>
-
-          <h1 className='relative z-10 mx-auto max-w-4xl text-center text-6xl font-medium leading-[0.95] tracking-[-0.07em] text-[#e8e7e2] sm:text-7xl md:text-8xl'>
+      <main className='flex flex-1 flex-col items-center justify-center py-4 md:py-5'>
+        <div className='flex w-full max-w-5xl flex-col items-center'>
+          <h1 className='text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl'>
             {title}
           </h1>
-          <p className='relative z-10 mt-5 max-w-md text-center text-sm leading-6 text-white/45 md:mt-6'>
-            Creo experiencias digitales con ideas claras, historias que conectan y tecnología que funciona.
-          </p>
+          <div className='mt-5 max-w-md text-center text-[11px] leading-5 text-white/45 md:mt-6'>
+            <p>Creo experiencias digitales con ideas claras, historias que conectan y</p>
+            <p>tecnología que funciona.</p>
+          </div>
 
-          <div className='relative mt-10 flex w-full items-center justify-center md:mt-12'>
-            <div className='grid w-full max-w-5xl grid-cols-2 gap-3 md:grid-cols-3 md:gap-5'>
-              {categories.map(([label, href, image], index) => (
+          <div className='relative mt-4 h-[205px] w-full max-w-3xl sm:h-[220px] md:mt-7 md:h-[235px]'>
+            {categories.map(([label, href, image], index) => {
+              const positions = [
+                'left-0 top-0 sm:left-2 md:left-0',
+                'left-[12%] top-[88px] sm:left-[14%] md:left-[13%]',
+                'right-0 top-0 sm:right-2 md:right-0',
+                'right-[10%] top-[88px] sm:right-[12%] md:right-[10%]',
+                'left-[22%] bottom-0 sm:left-[24%] md:left-[22%]',
+                'right-[24%] bottom-0 sm:right-[25%] md:right-[24%]',
+              ];
+              return (
                 <Link
                   key={href}
                   href={href}
                   onMouseEnter={() => setTitle(label)}
                   onMouseLeave={() => setTitle("Anthony Duarte")}
-                  className={`group relative flex h-36 overflow-hidden rounded-2xl border border-white/[0.09] bg-[#101010] p-4 transition-all duration-500 hover:-translate-y-1 hover:border-white/25 md:h-44 md:p-5 ${index % 3 === 1 ? "md:translate-y-8" : ""}`}
+                  className={`group absolute flex h-[88px] w-[190px] overflow-hidden rounded-xl border border-white/[0.11] bg-[#101010] p-3 transition-all duration-500 hover:z-10 hover:-translate-y-1 hover:border-white/30 sm:h-[98px] sm:w-[220px] md:h-[104px] md:w-[250px] ${positions[index]}`}
                 >
                   <img src={image} alt={`Portada ${label}`} className='absolute inset-0 h-full w-full object-cover opacity-55 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-85 group-hover:grayscale-0' />
-                  <div className='absolute inset-0 bg-gradient-to-b from-black/15 via-black/55 to-black/90' />
-                  <span className='relative z-10 text-[10px] tracking-[0.18em] text-white/45'>{String(index + 1).padStart(2, "0")}</span>
-                  <h2 className='relative z-10 m-auto text-center text-base font-medium text-white md:text-lg'>{label}</h2>
+                  <div className='absolute inset-0 bg-gradient-to-b from-black/10 via-black/45 to-black/85' />
+                  <span className='relative z-10 text-[8px] tracking-[0.18em] text-white/40'>{String(index + 1).padStart(2, "0")}</span>
+                  <h2 className='relative z-10 m-auto text-center text-xs font-medium text-white sm:text-sm'>{label}</h2>
                 </Link>
-              ))}
-            </div>
+              );
+            })}
           </div>
 
-          <div className='relative z-10 mt-16 flex flex-col items-center gap-3 text-center md:mt-20'>
-            <span className='text-[10px] uppercase tracking-[0.24em] text-white/35'>Sobre mí</span>
-            <p className='max-w-xl text-sm leading-6 text-white/65'>Soy Anthony, un creativo multidisciplinario que combina estrategia, diseño y desarrollo para convertir conceptos en proyectos memorables.</p>
-          </div>
+          <Link href='#contacto' className='mt-8 rounded-full border border-white/[0.14] px-5 py-2 text-[10px] text-white/65 transition-colors hover:border-white/35 hover:text-white'>
+            Contacto
+          </Link>
         </div>
       </main>
       <Footer />
