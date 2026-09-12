@@ -927,6 +927,14 @@ img, video {
   font-size: 9px;
 }
 
+.text-\[12px\] {
+  font-size: 12px;
+}
+
+.text-\[14px\] {
+  font-size: 14px;
+}
+
 .font-bold {
   font-weight: 700;
 }

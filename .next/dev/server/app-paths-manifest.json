@@ -1,4 +1,7 @@
 {
+  "/diseno/page": "app/diseno/page.js",
+  "/marketing/page": "app/marketing/page.js",
+  "/motion/page": "app/motion/page.js",
   "/page": "app/page.js",
   "/redaccion/page": "app/redaccion/page.js",
   "/video/page": "app/video/page.js",

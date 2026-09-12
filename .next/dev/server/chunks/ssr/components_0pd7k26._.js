@@ -20,11 +20,11 @@ function Footer() {
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
         id: "contacto",
-        className: "relative mt-3 w-full border-t border-white/10 text-[10px] text-gray-400",
+        className: "relative mt-3 w-full border-t border-white/10 text-[12px] text-gray-400",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                 href: "mailto:anthonyraduarte@gmail.com",
-                className: "absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.14] bg-[#0b0b0b] px-5 py-2 text-[9px] text-white/65 transition-colors hover:border-white/35 hover:text-white",
+                className: "absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.14] bg-[#0b0b0b] px-5 py-2 text-[12px] text-white/65 transition-colors hover:border-white/35 hover:text-white",
                 children: "Contacto"
             }, void 0, false, {
                 fileName: "[project]/components/Footer.tsx",
@@ -155,7 +155,7 @@ function HomePage() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mt-6 max-w-lg text-center text-xs leading-5 text-white/45 md:mt-7",
+                            className: "mt-6 max-w-lg text-center text-[14px] leading-5 text-white/45 md:mt-7",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     children: "Creo experiencias digitales con ideas claras, historias que conectan y"
@@ -346,7 +346,7 @@ function Navbar() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                         href: "/",
-                        className: "hidden rounded-full border border-white/[0.1] px-4 py-2 font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white sm:block",
+                        className: "hidden rounded-full border border-white/[0.1] px-4 py-2 text-[12px] font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white sm:block",
                         children: "Portafolio"
                     }, void 0, false, {
                         fileName: "[project]/components/Navbar.tsx",
@@ -366,7 +366,7 @@ function Navbar() {
                     className: "mx-auto flex w-fit max-w-full items-center gap-1 overflow-x-auto rounded-full border border-white/[0.1] bg-white/[0.025] px-3 py-2",
                     children: portfolioLinks.map(([label, href])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                             href: href,
-                            className: "whitespace-nowrap rounded-full px-2.5 py-2 text-[9px] font-medium transition-colors hover:bg-white/[0.07] hover:text-white sm:px-3.5",
+                            className: "whitespace-nowrap rounded-full px-2.5 py-2 text-[12px] font-medium transition-colors hover:bg-white/[0.07] hover:text-white sm:px-3.5",
                             children: label
                         }, href, false, {
                             fileName: "[project]/components/Navbar.tsx",
@@ -385,7 +385,7 @@ function Navbar() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 href: "#contacto",
-                className: "hidden shrink-0 rounded-full border border-white/[0.1] px-3 py-2 font-medium text-white/55 transition-colors hover:bg-white/[0.06] hover:text-white sm:block",
+                className: "hidden shrink-0 rounded-full border border-white/[0.1] px-3 py-2 text-[12px] font-medium text-white/55 transition-colors hover:bg-white/[0.06] hover:text-white sm:block",
                 children: locationTime
             }, void 0, false, {
                 fileName: "[project]/components/Navbar.tsx",
