@@ -316,6 +316,38 @@ img, video {
   top: 88px;
 }
 
+.left-\[10\%\] {
+  left: 10%;
+}
+
+.left-\[20\%\] {
+  left: 20%;
+}
+
+.right-\[20\%\] {
+  right: 20%;
+}
+
+.right-\[8\%\] {
+  right: 8%;
+}
+
+.top-\[96px\] {
+  top: 96px;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.left-\[8\%\] {
+  left: 8%;
+}
+
+.right-\[6\%\] {
+  right: 6%;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -368,6 +400,10 @@ img, video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-3 {
+  margin-top: .75rem;
 }
 
 .inline-block {
@@ -440,6 +476,14 @@ img, video {
   height: 88px;
 }
 
+.h-\[220px\] {
+  height: 220px;
+}
+
+.h-\[94px\] {
+  height: 94px;
+}
+
 .max-h-\[90vh\] {
   max-height: 90vh;
 }
@@ -462,6 +506,10 @@ img, video {
 
 .w-\[190px\] {
   width: 190px;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .min-w-0 {
@@ -496,12 +544,26 @@ img, video {
   max-width: 100%;
 }
 
+.max-w-lg {
+  max-width: 32rem;
+}
+
 .flex-1 {
   flex: 1;
 }
 
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -796,6 +858,24 @@ img, video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.px-2\.5 {
+  padding-left: .625rem;
+  padding-right: .625rem;
+}
+
+.pb-1 {
+  padding-bottom: .25rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -1097,6 +1177,38 @@ button, a {
     right: 25%;
   }
 
+  .sm\:left-0 {
+    left: 0;
+  }
+
+  .sm\:left-\[11\%\] {
+    left: 11%;
+  }
+
+  .sm\:left-\[22\%\] {
+    left: 22%;
+  }
+
+  .sm\:right-0 {
+    right: 0;
+  }
+
+  .sm\:right-\[21\%\] {
+    right: 21%;
+  }
+
+  .sm\:right-\[9\%\] {
+    right: 9%;
+  }
+
+  .sm\:left-\[10\%\] {
+    left: 10%;
+  }
+
+  .sm\:right-\[8\%\] {
+    right: 8%;
+  }
+
   .sm\:block {
     display: block;
   }
@@ -1125,12 +1237,28 @@ button, a {
     height: 98px;
   }
 
+  .sm\:h-\[240px\] {
+    height: 240px;
+  }
+
+  .sm\:h-\[108px\] {
+    height: 108px;
+  }
+
+  .sm\:h-\[104px\] {
+    height: 104px;
+  }
+
   .sm\:w-\[235px\] {
     width: 235px;
   }
 
   .sm\:w-\[220px\] {
     width: 220px;
+  }
+
+  .sm\:w-\[240px\] {
+    width: 240px;
   }
 
   .sm\:gap-5 {
@@ -1145,6 +1273,11 @@ button, a {
   .sm\:px-3 {
     padding-left: .75rem;
     padding-right: .75rem;
+  }
+
+  .sm\:px-3\.5 {
+    padding-left: .875rem;
+    padding-right: .875rem;
   }
 
   .sm\:text-6xl {
@@ -1183,6 +1316,18 @@ button, a {
     right: 24%;
   }
 
+  .md\:left-\[12\%\] {
+    left: 12%;
+  }
+
+  .md\:left-\[23\%\] {
+    left: 23%;
+  }
+
+  .md\:right-\[22\%\] {
+    right: 22%;
+  }
+
   .md\:mt-6 {
     margin-top: 1.5rem;
   }
@@ -1193,6 +1338,10 @@ button, a {
 
   .md\:mt-7 {
     margin-top: 1.75rem;
+  }
+
+  .md\:mt-8 {
+    margin-top: 2rem;
   }
 
   .md\:flex {
@@ -1227,12 +1376,32 @@ button, a {
     height: 104px;
   }
 
+  .md\:h-\[255px\] {
+    height: 255px;
+  }
+
+  .md\:h-\[116px\] {
+    height: 116px;
+  }
+
+  .md\:h-\[106px\] {
+    height: 106px;
+  }
+
   .md\:w-\[270px\] {
     width: 270px;
   }
 
   .md\:w-\[250px\] {
     width: 250px;
+  }
+
+  .md\:w-\[275px\] {
+    width: 275px;
+  }
+
+  .md\:w-\[230px\] {
+    width: 230px;
   }
 
   .md\:grid-cols-2 {

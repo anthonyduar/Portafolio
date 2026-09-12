@@ -41,8 +41,8 @@ export default function Navbar() {
         <Link href='/' className='hidden rounded-full border border-white/[0.1] px-4 py-2 font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white sm:block'>Portafolio</Link>
       </div>
       <nav className='min-w-0 flex-1' aria-label='Navegación principal'>
-        <div className='mx-auto flex w-fit max-w-full items-center gap-0 overflow-x-auto rounded-full border border-white/[0.1] bg-white/[0.025] px-2 py-1.5'>
-          {portfolioLinks.map(([label, href]) => <Link key={href} href={href} className='whitespace-nowrap rounded-full px-2 py-1.5 font-medium transition-colors hover:bg-white/[0.07] hover:text-white sm:px-3'>{label}</Link>)}
+        <div className='mx-auto flex w-fit max-w-full items-center gap-1 overflow-x-auto rounded-full border border-white/[0.1] bg-white/[0.025] px-3 py-2'>
+          {portfolioLinks.map(([label, href]) => <Link key={href} href={href} className='whitespace-nowrap rounded-full px-2.5 py-2 text-[9px] font-medium transition-colors hover:bg-white/[0.07] hover:text-white sm:px-3.5'>{label}</Link>)}
         </div>
       </nav>
       <Link href='#contacto' className='hidden shrink-0 rounded-full border border-white/[0.1] px-3 py-2 font-medium text-white/55 transition-colors hover:bg-white/[0.06] hover:text-white sm:block'>{locationTime}</Link>
