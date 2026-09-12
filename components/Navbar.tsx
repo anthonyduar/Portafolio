@@ -40,17 +40,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className='flex w-full items-center justify-between text-sm text-gray-400'>
-      <div className='flex items-center'>
-        <span className='font-bold text-white'>▲</span>
+    <header className='mx-auto flex w-full max-w-6xl items-center justify-between text-xs text-white/45'>
+      <div className='flex items-center gap-4'>
+        <span className='flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white text-sm font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)]'>▲</span>
         <Link
           href='/'
-          className='ml-12 font-medium text-white transition-colors hover:text-gray-300'
+          className='rounded-full border border-white/[0.08] bg-white/[0.03] px-5 py-3 font-medium text-white/70 transition-colors hover:bg-white/[0.06] hover:text-white'
         >
           Portafolio
         </Link>
       </div>
-      <span className='font-medium text-white'>{locationTime}</span>
+      <span className='rounded-full border border-white/[0.08] px-4 py-2 font-medium text-white/55'>{locationTime}</span>
     </header>
   );
 }

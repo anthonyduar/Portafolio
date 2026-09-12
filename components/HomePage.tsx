@@ -18,22 +18,22 @@ export default function HomePage() {
   const [title, setTitle] = useState("Anthony Duarte");
 
   return (
-    <div className='flex min-h-screen max-w-[1440px] flex-col justify-between overflow-hidden bg-black px-3 py-2 text-white md:px-6'>
+    <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col justify-between overflow-hidden bg-[#0b0b0b] px-4 py-4 text-white md:px-12 md:py-6'>
       <Navbar />
-      <main className='my-auto py-2'>
-        <h1 className='mb-6 text-center text-7xl font-normal tracking-tight'>
+      <main className='my-auto py-16 md:py-24'>
+        <h1 className='mx-auto mb-8 max-w-4xl text-center text-6xl font-medium leading-[0.98] tracking-[-0.06em] text-[#e8e7e2] sm:text-7xl md:text-8xl'>
           {title}
         </h1>
-        <section className='grid w-full grid-cols-1 items-stretch gap-4 md:grid-cols-[1fr_1.4fr_1fr]'>
+        <section className='mx-auto grid w-full max-w-6xl grid-cols-1 items-stretch gap-3 md:grid-cols-[1fr_1.4fr_1fr]'>
           <div className='grid grid-cols-1 gap-4'>
-            <div className='flex h-[190px] items-center justify-center overflow-hidden rounded-3xl border border-white/5 bg-[#121212] p-5'>
+            <div className='flex h-[190px] items-center justify-center overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101010] p-5'>
               <img
                 src='/img/foto.png'
                 alt='Anthony Duarte'
                 className='h-20 w-20 rounded-full object-cover opacity-70'
               />
             </div>
-            <div className='relative flex h-[190px] flex-col justify-between overflow-hidden rounded-3xl border border-white/5 bg-[#121212] p-5'>
+            <div className='relative flex h-[190px] flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101010] p-5'>
               <span className='relative z-10 text-xs text-gray-500'>
                 Sobre Mí
               </span>
@@ -43,7 +43,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className='rounded-3xl border border-white/5 bg-[#121212] p-5 md:min-h-[356px]'>
+          <div className='rounded-2xl border border-white/[0.08] bg-[#101010] p-5 md:min-h-[356px]'>
             <span className='text-xs text-gray-500'>Portafolios</span>
             <div className='my-2 grid grid-cols-2 gap-3 sm:grid-cols-3'>
               {categories.map(([label, href, image]) => (
@@ -52,7 +52,7 @@ export default function HomePage() {
                   href={href}
                   onMouseEnter={() => setTitle(label)}
                   onMouseLeave={() => setTitle("Anthony Duarte")}
-                  className='group relative flex h-[130px] overflow-hidden rounded-3xl border border-white/5 bg-[#121212] p-6 transition-all duration-300 hover:scale-[1.02] hover:border-white/20'
+                  className='group relative flex h-[130px] overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101010] p-6 transition-all duration-300 hover:scale-[1.02] hover:border-white/20'
                 >
                   <img
                     src={image}
@@ -68,7 +68,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className='grid grid-cols-1 gap-4'>
-            <div className='flex h-[190px] items-center justify-center rounded-3xl border border-white/5 bg-[#121212] p-4'>
+            <div className='flex h-[190px] items-center justify-center rounded-2xl border border-white/[0.08] bg-[#101010] p-4'>
               <div className='flex flex-wrap items-center justify-center gap-3'>
                 {[
                   ["figma.svg", "Figma"],
@@ -90,7 +90,7 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className='flex h-[190px] flex-col justify-between rounded-3xl border border-white/5 bg-[#121212] p-5'>
+            <div className='flex h-[190px] flex-col justify-between rounded-2xl border border-white/[0.08] bg-[#101010] p-5'>
               <span className='text-xs text-gray-500'>Contacto</span>
               <div className='flex items-center justify-center gap-6'>
                 <a
