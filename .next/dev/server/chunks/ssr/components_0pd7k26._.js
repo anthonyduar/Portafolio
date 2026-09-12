@@ -107,14 +107,14 @@ const categories = [
         "/img/edicion.png"
     ],
     [
-        "Diseño",
-        "/diseno",
-        "/img/diseno.png"
-    ],
-    [
         "Motion Graphics",
         "/motion",
         "/img/motion.png"
+    ],
+    [
+        "Diseño",
+        "/diseno",
+        "/img/diseno.png"
     ],
     [
         "Desarrollo Web",
@@ -125,7 +125,7 @@ const categories = [
 function HomePage() {
     const [title, setTitle] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("Anthony Duarte");
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "mx-auto flex min-h-screen w-full max-w-[1440px] flex-col overflow-hidden bg-[#0b0b0b] px-4 py-5 text-white md:px-12 md:py-7",
+        className: "mx-auto flex min-h-screen w-full max-w-[1440px] flex-col overflow-hidden bg-[#0b0b0b] px-4 py-2 text-white sm:px-6 md:px-12",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Navbar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/HomePage.tsx",
@@ -133,145 +133,109 @@ function HomePage() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-                className: "flex flex-1 flex-col justify-center py-12 md:py-16",
+                className: "flex flex-1 flex-col items-center justify-center py-4 md:py-5",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "relative mx-auto flex w-full max-w-6xl flex-col items-center",
+                    className: "flex w-full max-w-5xl flex-col items-center",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                            className: "pointer-events-none absolute inset-0 hidden md:block",
-                            "aria-hidden": "true",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "absolute left-0 top-[12%] h-px w-24 bg-white/10"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/HomePage.tsx",
-                                    lineNumber: 26,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "absolute right-0 top-[12%] h-px w-24 bg-white/10"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/HomePage.tsx",
-                                    lineNumber: 27,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "absolute bottom-[12%] left-8 h-px w-24 bg-white/10"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/HomePage.tsx",
-                                    lineNumber: 28,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "absolute bottom-[12%] right-8 h-px w-24 bg-white/10"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/HomePage.tsx",
-                                    lineNumber: 29,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                            className: "text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl",
+                            children: title
+                        }, void 0, false, {
                             fileName: "[project]/components/HomePage.tsx",
                             lineNumber: 25,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "relative z-10 mx-auto max-w-4xl text-center text-6xl font-medium leading-[0.95] tracking-[-0.07em] text-[#e8e7e2] sm:text-7xl md:text-8xl",
-                            children: title
-                        }, void 0, false, {
-                            fileName: "[project]/components/HomePage.tsx",
-                            lineNumber: 32,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "relative z-10 mt-5 max-w-md text-center text-sm leading-6 text-white/45 md:mt-6",
-                            children: "Creo experiencias digitales con ideas claras, historias que conectan y tecnología que funciona."
-                        }, void 0, false, {
-                            fileName: "[project]/components/HomePage.tsx",
-                            lineNumber: 35,
-                            columnNumber: 11
-                        }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "relative mt-10 flex w-full items-center justify-center md:mt-12",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "grid w-full max-w-5xl grid-cols-2 gap-3 md:grid-cols-3 md:gap-5",
-                                children: categories.map(([label, href, image], index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                        href: href,
-                                        onMouseEnter: ()=>setTitle(label),
-                                        onMouseLeave: ()=>setTitle("Anthony Duarte"),
-                                        className: `group relative flex h-36 overflow-hidden rounded-2xl border border-white/[0.09] bg-[#101010] p-4 transition-all duration-500 hover:-translate-y-1 hover:border-white/25 md:h-44 md:p-5 ${index % 3 === 1 ? "md:translate-y-8" : ""}`,
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                src: image,
-                                                alt: `Portada ${label}`,
-                                                className: "absolute inset-0 h-full w-full object-cover opacity-55 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-85 group-hover:grayscale-0"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/HomePage.tsx",
-                                                lineNumber: 49,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "absolute inset-0 bg-gradient-to-b from-black/15 via-black/55 to-black/90"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/HomePage.tsx",
-                                                lineNumber: 50,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "relative z-10 text-[10px] tracking-[0.18em] text-white/45",
-                                                children: String(index + 1).padStart(2, "0")
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/HomePage.tsx",
-                                                lineNumber: 51,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                                className: "relative z-10 m-auto text-center text-base font-medium text-white md:text-lg",
-                                                children: label
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/HomePage.tsx",
-                                                lineNumber: 52,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, href, true, {
-                                        fileName: "[project]/components/HomePage.tsx",
-                                        lineNumber: 42,
-                                        columnNumber: 17
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "[project]/components/HomePage.tsx",
-                                lineNumber: 40,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/components/HomePage.tsx",
-                            lineNumber: 39,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "relative z-10 mt-16 flex flex-col items-center gap-3 text-center md:mt-20",
+                            className: "mt-5 max-w-md text-center text-[11px] leading-5 text-white/45 md:mt-6",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "text-[10px] uppercase tracking-[0.24em] text-white/35",
-                                    children: "Sobre mí"
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    children: "Creo experiencias digitales con ideas claras, historias que conectan y"
                                 }, void 0, false, {
                                     fileName: "[project]/components/HomePage.tsx",
-                                    lineNumber: 59,
+                                    lineNumber: 29,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "max-w-xl text-sm leading-6 text-white/65",
-                                    children: "Soy Anthony, un creativo multidisciplinario que combina estrategia, diseño y desarrollo para convertir conceptos en proyectos memorables."
+                                    children: "tecnología que funciona."
                                 }, void 0, false, {
                                     fileName: "[project]/components/HomePage.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 30,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/HomePage.tsx",
-                            lineNumber: 58,
+                            lineNumber: 28,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "relative mt-4 h-[205px] w-full max-w-3xl sm:h-[220px] md:mt-7 md:h-[235px]",
+                            children: categories.map(([label, href, image], index)=>{
+                                const positions = [
+                                    'left-0 top-0 sm:left-2 md:left-0',
+                                    'left-[12%] top-[88px] sm:left-[14%] md:left-[13%]',
+                                    'right-0 top-0 sm:right-2 md:right-0',
+                                    'right-[10%] top-[88px] sm:right-[12%] md:right-[10%]',
+                                    'left-[22%] bottom-0 sm:left-[24%] md:left-[22%]',
+                                    'right-[24%] bottom-0 sm:right-[25%] md:right-[24%]'
+                                ];
+                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    href: href,
+                                    onMouseEnter: ()=>setTitle(label),
+                                    onMouseLeave: ()=>setTitle("Anthony Duarte"),
+                                    className: `group absolute flex h-[88px] w-[190px] overflow-hidden rounded-xl border border-white/[0.11] bg-[#101010] p-3 transition-all duration-500 hover:z-10 hover:-translate-y-1 hover:border-white/30 sm:h-[98px] sm:w-[220px] md:h-[104px] md:w-[250px] ${positions[index]}`,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: image,
+                                            alt: `Portada ${label}`,
+                                            className: "absolute inset-0 h-full w-full object-cover opacity-55 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-85 group-hover:grayscale-0"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/HomePage.tsx",
+                                            lineNumber: 51,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute inset-0 bg-gradient-to-b from-black/10 via-black/45 to-black/85"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/HomePage.tsx",
+                                            lineNumber: 52,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "relative z-10 text-[8px] tracking-[0.18em] text-white/40",
+                                            children: String(index + 1).padStart(2, "0")
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/HomePage.tsx",
+                                            lineNumber: 53,
+                                            columnNumber: 19
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "relative z-10 m-auto text-center text-xs font-medium text-white sm:text-sm",
+                                            children: label
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/HomePage.tsx",
+                                            lineNumber: 54,
+                                            columnNumber: 19
+                                        }, this)
+                                    ]
+                                }, href, true, {
+                                    fileName: "[project]/components/HomePage.tsx",
+                                    lineNumber: 44,
+                                    columnNumber: 17
+                                }, this);
+                            })
+                        }, void 0, false, {
+                            fileName: "[project]/components/HomePage.tsx",
+                            lineNumber: 33,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            href: "#contacto",
+                            className: "mt-8 rounded-full border border-white/[0.14] px-5 py-2 text-[10px] text-white/65 transition-colors hover:border-white/35 hover:text-white",
+                            children: "Contacto"
+                        }, void 0, false, {
+                            fileName: "[project]/components/HomePage.tsx",
+                            lineNumber: 60,
                             columnNumber: 11
                         }, this)
                     ]
@@ -287,7 +251,7 @@ function HomePage() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/components/HomePage.tsx",
-                lineNumber: 64,
+                lineNumber: 65,
                 columnNumber: 7
             }, this)
         ]
@@ -326,6 +290,10 @@ const portfolioLinks = [
         "/video"
     ],
     [
+        "Diseño",
+        "/diseno"
+    ],
+    [
         "Motion Graphics",
         "/motion"
     ],
@@ -361,74 +329,73 @@ function Navbar() {
         };
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-        className: "mx-auto flex w-full max-w-6xl items-center justify-between gap-5 text-xs text-white/45",
+        className: "mx-auto flex w-full max-w-6xl items-center justify-between gap-3 text-[9px] text-white/45 sm:gap-5",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                href: "/",
-                "aria-label": "Inicio",
-                className: "flex size-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white text-sm font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)]",
-                children: "✦"
-            }, void 0, false, {
-                fileName: "[project]/components/Navbar.tsx",
-                lineNumber: 38,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-                className: "hidden min-w-0 flex-1 items-center justify-center md:flex",
-                "aria-label": "Navegación principal",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex max-w-4xl items-center gap-1 overflow-x-auto rounded-full border border-white/[0.1] bg-white/[0.025] px-3 py-2",
-                    children: [
-                        portfolioLinks.map(([label, href])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                href: href,
-                                className: "whitespace-nowrap rounded-full px-3 py-2 font-medium transition-colors hover:bg-white/[0.07] hover:text-white",
-                                children: label
-                            }, href, false, {
-                                fileName: "[project]/components/Navbar.tsx",
-                                lineNumber: 41,
-                                columnNumber: 50
-                            }, this)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                            href: "#contacto",
-                            className: "whitespace-nowrap rounded-full px-3 py-2 font-medium text-white/70 transition-colors hover:bg-white/[0.07] hover:text-white",
-                            children: "Contacto"
-                        }, void 0, false, {
-                            fileName: "[project]/components/Navbar.tsx",
-                            lineNumber: 42,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/components/Navbar.tsx",
-                    lineNumber: 40,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex shrink-0 items-center gap-3",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        href: "/",
+                        "aria-label": "Inicio",
+                        className: "flex size-7 items-center justify-center rounded-xl border border-white/10 bg-white text-xs font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)]",
+                        children: "▲"
+                    }, void 0, false, {
+                        fileName: "[project]/components/Navbar.tsx",
+                        lineNumber: 40,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                        href: "/",
+                        className: "hidden rounded-full border border-white/[0.1] px-4 py-2 font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white sm:block",
+                        children: "Portafolio"
+                    }, void 0, false, {
+                        fileName: "[project]/components/Navbar.tsx",
+                        lineNumber: 41,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/components/Navbar.tsx",
                 lineNumber: 39,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "hidden shrink-0 rounded-full border border-white/[0.08] px-4 py-2 font-medium text-white/55 lg:block",
-                children: locationTime
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+                className: "min-w-0 flex-1",
+                "aria-label": "Navegación principal",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mx-auto flex w-fit max-w-full items-center gap-0 overflow-x-auto rounded-full border border-white/[0.1] bg-white/[0.025] px-2 py-1.5",
+                    children: portfolioLinks.map(([label, href])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            href: href,
+                            className: "whitespace-nowrap rounded-full px-2 py-1.5 font-medium transition-colors hover:bg-white/[0.07] hover:text-white sm:px-3",
+                            children: label
+                        }, href, false, {
+                            fileName: "[project]/components/Navbar.tsx",
+                            lineNumber: 45,
+                            columnNumber: 50
+                        }, this))
+                }, void 0, false, {
+                    fileName: "[project]/components/Navbar.tsx",
+                    lineNumber: 44,
+                    columnNumber: 9
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/components/Navbar.tsx",
-                lineNumber: 45,
+                lineNumber: 43,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 href: "#contacto",
-                className: "shrink-0 rounded-full border border-white/[0.1] px-4 py-2 font-medium text-white/70 transition-colors hover:bg-white/[0.06] hover:text-white md:hidden",
-                children: "Contacto"
+                className: "hidden shrink-0 rounded-full border border-white/[0.1] px-3 py-2 font-medium text-white/55 transition-colors hover:bg-white/[0.06] hover:text-white sm:block",
+                children: locationTime
             }, void 0, false, {
                 fileName: "[project]/components/Navbar.tsx",
-                lineNumber: 46,
+                lineNumber: 48,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/Navbar.tsx",
-        lineNumber: 37,
+        lineNumber: 38,
         columnNumber: 5
     }, this);
 }
