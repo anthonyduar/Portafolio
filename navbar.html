@@ -1,0 +1,33 @@
+<header class="flex justify-between items-center text-sm text-gray-400 w-full">
+  <div class="flex items-center">
+    <span class="text-white font-bold">▲</span>
+    <a href="index.html" class="text-white font-medium ml-12 hover:text-gray-300 transition-colors">Portafolio</a>
+  </div>
+  <div>
+    <span id="user-location-time" class="text-white font-medium">Cargando...</span>
+  </div>
+</header>
+
+<script>
+  async function actualizarUbicacionYHora() {
+    const ahora = new Date();
+    const horaFormateada = ahora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    let pais = "País";
+
+    try {
+      const respuesta = await fetch('https://ipapi.co/json/');
+      const datos = await respuesta.json();
+      if (datos.country_name) {
+        pais = datos.country_name;
+      }
+    } catch (error) {
+      pais = Intl.DateTimeFormat().resolvedOptions().timeZone.split('/')[1]?.replace('_', ' ') || "Local";
+    }
+
+    document.getElementById('user-location-time').innerText = `${pais} — ${horaFormateada}`;
+  }
+
+  actualizarUbicacionYHora();
+  setInterval(actualizarUbicacionYHora, 60000);
+</script>

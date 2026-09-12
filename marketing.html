@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio - Marketing Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="min-h-screen bg-black text-white py-2 px-3 md:px-6 flex flex-col justify-between max-w-[1440px] mx-auto overflow-hidden"
+  >
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Contenido Principal -->
+    <main class="my-auto py-1">
+      <h1
+        class="text-5xl md:text-7xl font-normal tracking-tight text-center mb-6"
+      >
+        Marketing Digital
+      </h1>
+
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 gap-2 w-full max-w-4xl mx-auto items-stretch"
+      >
+        <!-- Tarjeta 1 -->
+        <div
+          onclick="abrirModal('modalCaso')"
+          class="relative group bg-[#121212] rounded-3xl p-6 h-[260px] border border-white/5 transition-transform duration-300 hover:scale-[1.02] cursor-pointer flex flex-col justify-between overflow-hidden"
+        >
+          <img 
+            src="img/portada-marketing-eparadise.png" 
+            alt="Portada Estrategia SEO" 
+            class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-300"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/90"></div>
+
+          <div class="relative z-10 flex flex-col justify-between h-full">
+            <span class="text-xs text-gray-300">01</span>
+            <div>
+              <h2 class="text-xl font-medium mb-1 text-white">Estrategia de Contenido</h2>
+              <p class="text-sm text-gray-200">Copywriting, diseño y video para eCommerce.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div
+          onclick="abrirModal('modal-card-2')"
+          class="relative group bg-[#121212] rounded-3xl p-6 h-[260px] border border-white/5 transition-transform duration-300 hover:scale-[1.02] cursor-pointer flex flex-col justify-between overflow-hidden"
+        >
+          <!-- Imagen de Fondo de la Tarjeta -->
+          <img 
+            src="img/portada-branding-actualnow.png" 
+            alt="Portada Gestión de Contenido" 
+            class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-300"
+          />
+          <!-- Degradado oscuro -->
+          <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/90"></div>
+
+          <!-- Contenido de la tarjeta -->
+          <div class="relative z-10 flex flex-col justify-between h-full">
+            <span class="text-xs text-gray-300">02</span>
+            <div>
+              <h2 class="text-xl font-medium mb-1 text-white">Gestión de Contenido</h2>
+              <p class="text-sm text-gray-200">
+                Copy, creación de contenido y tráfico Web.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Botón Volver Pro Estilo Dark Minimal -->
+      <div class="flex justify-center mt-12">
+        <a 
+          href="index.html" 
+          class="group relative inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-[#121212] border border-white/10 text-sm font-medium text-gray-300 hover:text-white hover:border-white/20 transition-all duration-300 shadow-2xl cursor-pointer overflow-hidden"
+        >
+          <!-- Efecto de brillo interno al pasar el mouse -->
+          <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          
+          <span class="relative z-10 transition-transform duration-300 group-hover:-translate-x-1.5 text-gray-400 group-hover:text-white">←</span>
+          <span class="relative z-10 tracking-wide">Volver al inicio</span>
+        </a>
+      </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder" class="w-full mt-8"></div>
+
+    <!-- Modal 1 -->
+    <div
+      id="modalCaso"
+      class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300 p-4"
+    >
+      <div
+        class="relative bg-neutral-900 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto p-6 border border-neutral-800 shadow-2xl"
+      >
+        <button
+          onclick="cerrarModal('modalCaso')"
+          class="sticky top-0 float-right text-white text-lg bg-neutral-800 px-3 py-1 rounded-full hover:bg-neutral-700 cursor-pointer z-10"
+        >
+          ✕
+        </button>
+        
+        <img
+          src="img/portafolios/marketing-eparadise.png"
+          alt="Caso de Estudio"
+          class="w-full h-auto rounded-lg mt-4"
+        />
+
+        <div class="bg-white rounded-2xl p-6 mt-4 flex justify-center items-center">
+          <div class="relative w-full max-w-sm aspect-[9/16] rounded-lg overflow-hidden shadow-sm">
+            <iframe 
+              src="https://player.vimeo.com/video/1219104502" 
+              class="absolute top-0 left-0 w-full h-full border-0"
+              allow="autoplay; fullscreen; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <img
+          src="img/portafolios/marketing-eparadise2.png"
+          alt="Segunda Imagen del Caso de Estudio"
+          class="w-full h-auto rounded-lg mt-4"
+        />
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div
+      id="modal-card-2"
+      class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 opacity-0 pointer-events-none transition-opacity duration-300 p-4"
+    >
+      <div
+        class="relative bg-neutral-900 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto p-6 border border-neutral-800 shadow-2xl"
+      >
+        <button
+          onclick="cerrarModal('modal-card-2')"
+          class="sticky top-0 float-right text-white text-lg bg-neutral-800 px-3 py-1 rounded-full hover:bg-neutral-700 cursor-pointer z-10"
+        >
+          ✕
+        </button>
+
+        <img src="img/portafolios/marketing-actualnow.png" alt="Imagen 1" class="w-full h-auto rounded-lg mt-4" />
+
+        <div class="bg-white rounded-2xl p-6 mt-4 flex justify-center items-center">
+          <div class="relative w-full max-w-sm aspect-[9/16] rounded-lg overflow-hidden shadow-sm">
+            <iframe src="https://player.vimeo.com/video/1221664277" class="absolute top-0 left-0 w-full h-full border-0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <img src="img/portafolios/marketing-actualnow2.png" alt="Imagen 2" class="w-full h-auto rounded-lg mt-4" />
+      </div>
+    </div>
+
+    <script>
+      function abrirModal(id = 'modalCaso') {
+        document.getElementById(id).classList.remove('opacity-0', 'pointer-events-none');
+      }
+
+      function cerrarModal(id = 'modalCaso') {
+        document.getElementById(id).classList.add('opacity-0', 'pointer-events-none');
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          cerrarModal('modalCaso');
+          cerrarModal('modal-card-2');
+        }
+      });
+
+      fetch("navbar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>
