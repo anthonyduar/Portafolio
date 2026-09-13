@@ -51,22 +51,29 @@ export default function Navbar() {
   return (
     <header className='mx-auto flex w-full max-w-6xl items-center justify-between gap-3 text-[9px] text-white/45 sm:gap-5'>
       <div className='flex shrink-0 items-center gap-3'>
-        <button
-          type='button'
-          onClick={() => setIsDropdownOpen((isOpen) => !isOpen)}
-          aria-label='Abrir menú'
-          aria-expanded={isDropdownOpen}
-          aria-controls='menu-secciones'
-          className={`flex size-7 items-center justify-center rounded-xl border border-white/10 bg-white text-xs font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)] transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`}
-        >
-          ▲
-        </button>
         <Link
           href='/'
-          className='hidden rounded-full border border-white/[0.1] px-4 py-2 text-[12px] font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white sm:block'
+          aria-label='Ir al inicio'
+          className='flex size-7 items-center justify-center rounded-xl border border-white/10 bg-white text-xs font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)] sm:hidden'
         >
-          Portafolio
+          ▲
         </Link>
+        <div className='hidden items-center gap-3 sm:flex'>
+          <Link
+            href='/'
+            aria-label='Ir al inicio'
+            className='flex size-7 items-center justify-center rounded-xl border border-white/10 bg-white text-xs font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)]'
+          >
+            ▲
+          </Link>
+          <Link
+            href='/'
+            aria-label='Ir al inicio'
+            className='flex items-center rounded-full border border-white/[0.1] px-4 py-2 text-[12px] font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white'
+          >
+            Portafolio
+          </Link>
+        </div>
       </div>
       <nav
         className='min-w-0 flex-1 relative'
@@ -84,6 +91,17 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
+
+          <button
+            type='button'
+            onClick={() => setIsDropdownOpen((isOpen) => !isOpen)}
+            aria-label='Abrir secciones'
+            aria-expanded={isDropdownOpen}
+            aria-controls='menu-secciones'
+            className={`flex items-center justify-center px-2 py-2 text-[11px] font-bold text-white/45 transition-transform duration-300 md:hidden ${isDropdownOpen ? "rotate-180" : ""}`}
+          >
+            ▼
+          </button>
 
           {/* 2. Enlaces Secundarios para Escritorio */}
           <div className='hidden md:flex items-center gap-0.5'>
