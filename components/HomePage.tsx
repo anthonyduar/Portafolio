@@ -44,13 +44,15 @@ export default function HomePage() {
             <p>| Desarrollo web |</p>
           </div>
 
-          <button
-            type='button'
-            onClick={() => setIsAboutOpen(true)}
-            className='absolute top-[148px] z-20 rounded-full border border-white/[0.1] bg-white/[0.04] px-4 py-2 text-[10px] font-medium text-white/70 opacity-0 animate-[about-button-in_700ms_ease-out_500ms_forwards] transition-colors hover:border-white/25 hover:bg-white/[0.09] hover:text-white'
-          >
-            Sobre mí
-          </button>
+          <div className='fixed right-6 top-1/2 z-30 animate-[about-button-float_4s_ease-in-out_infinite]'>
+            <button
+              type='button'
+              onClick={() => setIsAboutOpen(true)}
+              className='rounded-full border border-white/[0.1] bg-white/[0.04] px-4 py-2 text-[10px] font-medium text-white/70 opacity-0 animate-[about-button-in_700ms_ease-out_500ms_forwards] transition-colors hover:border-white/25 hover:bg-white/[0.09] hover:text-white'
+            >
+              Sobre mí
+            </button>
+          </div>
 
           <div className='relative mt-6 grid w-full grid-cols-2 gap-3 px-2 max-sm:landscape:mt-3 max-sm:landscape:grid-cols-3 max-sm:landscape:gap-2 max-sm:landscape:px-0 sm:grid-cols-3 md:grid-cols-none md:absolute md:top-[180px] md:mt-0 md:h-[240px] md:max-w-4xl md:gap-0 md:px-0'>
             {categories.map(([label, href, image], index) => {
