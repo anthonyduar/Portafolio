@@ -7,40 +7,41 @@ import Navbar from "./Navbar";
 
 const categories = [
   ["Redacción", "/redaccion", "/img/redaccion.png"],
-  ["Marketing Digital", "/marketing", "/img/marketing.png"],
-  ["Edición de Video", "/video", "/img/edicion.png"],
-  ["Motion Graphics", "/motion", "/img/motion.png"],
   ["Diseño", "/diseno", "/img/diseno.png"],
   ["Desarrollo Web", "/web", "/img/desarrollo.png"],
+  ["Motion Graphics", "/motion", "/img/motion.png"],
+  ["Marketing Digital", "/marketing", "/img/marketing.png"],
+  ["Edición de Video", "/video", "/img/edicion.png"],
 ];
 
 export default function HomePage() {
   const [title, setTitle] = useState("Anthony Duarte");
 
-  return (
-    <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col overflow-hidden bg-[#0b0b0b] px-4 py-2 text-white sm:px-6 md:px-12'>
-      <Navbar />
-      <main className='flex flex-1 flex-col items-center justify-center py-4 md:py-5'>
-        <div className='flex w-full max-w-5xl flex-col items-center'>
-          <h1 className='text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl'>
-            {title}
-          </h1>
-          <div className='mt-6 max-w-lg text-center text-[14px] leading-5 text-white/45 md:mt-7'>
-            <p>Creo experiencias digitales con ideas claras, historias que conectan y</p>
-            <p>tecnología que funciona.</p>
-          </div>
+ return (
+  <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col overflow-hidden bg-[#0b0b0b] px-4 py-2 text-white sm:px-6 md:px-12'>
+    <Navbar />
+    <main className='flex flex-1 flex-col items-center justify-start pt-6 pb-4 md:pt-10 md:pb-5'>
+      <div className='relative flex w-full max-w-5xl flex-col items-center'>
+        <h1 className='text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl'>
+          {title}
+        </h1>
+        <div className='mt-6 max-w-lg text-center text-[16px] leading-5 text-white/45 md:mt-7'>
+          <p>Creador de contenido digital. Especializado en redacción SEO,</p>
+          <p>gestión editorial, edición audiovisual</p> 
+          <p>y desarrollo web.</p>
+        </div>
 
-          <div className='relative mt-5 h-[220px] w-full max-w-4xl sm:h-[240px] md:mt-8 md:h-[255px]'>
-            {categories.map(([label, href, image], index) => {
-              const positions = [
-                'left-0 top-0 sm:left-0 md:left-0',
-                'left-[8%] top-[96px] sm:left-[10%] md:left-[12%]',
-                'right-0 top-0 sm:right-0 md:right-0',
-                'right-[6%] top-[96px] sm:right-[8%] md:right-[10%]',
-                'left-[20%] bottom-0 sm:left-[22%] md:left-[23%]',
-                'right-[20%] bottom-0 sm:right-[21%] md:right-[22%]',
-              ];
-              return (
+        <div className='absolute top-[180px] h-[240px] w-full max-w-4xl'>
+          {categories.map(([label, href, image], index) => {
+            const positions = [
+              'left-0 -top-[10px] sm:left-0 md:left-0',
+              'left-[8%] top-[62px] sm:left-[10%] md:left-[12%]',
+              'right-0 -top-[10px] sm:right-0 md:right-0',
+              'right-[6%] top-[62px] sm:right-[8%] md:right-[10%]',
+              'left-[20%] bottom-0 sm:left-[22%] md:left-[23%]',
+              'right-[20%] bottom-0 sm:right-[21%] md:right-[22%]',
+            ];
+            return (
                 <Link
                   key={href}
                   href={href}

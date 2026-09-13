@@ -45,7 +45,7 @@ export default function Navbar() {
           {portfolioLinks.map(([label, href]) => <Link key={href} href={href} className='whitespace-nowrap rounded-full px-2.5 py-2 text-[12px] font-medium transition-colors hover:bg-white/[0.07] hover:text-white sm:px-3.5'>{label}</Link>)}
         </div>
       </nav>
-      <Link href='#contacto' className='hidden shrink-0 rounded-full border border-white/[0.1] px-3 py-2 text-[12px] font-medium text-white/55 transition-colors hover:bg-white/[0.06] hover:text-white sm:block'>{locationTime}</Link>
+      <div className='hidden shrink-0 rounded-full border border-white/[0.1] px-3 py-2 text-[12px] font-medium text-white/55 sm:block select-none'>{locationTime}</div>
     </header>
   );
 }
