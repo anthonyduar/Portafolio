@@ -60,9 +60,13 @@ export default function Navbar() {
         </Link>
         <Link
           href='/'
-          className='hidden rounded-full border border-white/[0.1] px-4 py-2 text-[12px] font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white sm:block'
+          aria-label='Ir al inicio'
+          className='hidden items-center gap-2 rounded-full border border-white/[0.1] px-4 py-2 text-[12px] font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white sm:flex'
         >
           Portafolio
+          <span aria-hidden='true' className='text-[9px] text-white/45'>
+            ▼
+          </span>
         </Link>
       </div>
       <nav
