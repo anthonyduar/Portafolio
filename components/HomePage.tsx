@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -23,7 +24,18 @@ export default function HomePage() {
     <main className='flex flex-1 flex-col items-center justify-start pt-6 pb-4 md:pt-10 md:pb-5'>
       <div className='relative flex w-full max-w-5xl flex-col items-center'>
         <h1 className='text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl'>
-          {title}
+          <AnimatePresence initial={false} mode='wait'>
+            <motion.span
+              key={title}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className='inline-block'
+            >
+              {title}
+            </motion.span>
+          </AnimatePresence>
         </h1>
         <div className='mt-6 max-w-lg text-center text-[16px] leading-5 text-white/45 md:mt-7'>
           <p>Creador de contenido digital. Especializado en redacción SEO,</p>
