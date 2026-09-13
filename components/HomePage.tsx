@@ -17,6 +17,7 @@ const categories = [
 
 export default function HomePage() {
   const [title, setTitle] = useState("Anthony Duarte");
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   return (
     <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col overflow-x-hidden bg-[#0b0b0b] px-4 py-2 text-white sm:px-6 md:px-12'>
@@ -42,6 +43,14 @@ export default function HomePage() {
             <p>| Editor de Video | Diseñador para Redes |</p>
             <p>| Desarrollo web |</p>
           </div>
+
+          <button
+            type='button'
+            onClick={() => setIsAboutOpen(true)}
+            className='absolute top-[148px] z-20 rounded-full border border-white/[0.1] bg-white/[0.04] px-4 py-2 text-[10px] font-medium text-white/70 opacity-0 animate-[about-button-in_700ms_ease-out_500ms_forwards] transition-colors hover:border-white/25 hover:bg-white/[0.09] hover:text-white'
+          >
+            Sobre mí
+          </button>
 
           <div className='relative mt-6 grid w-full grid-cols-2 gap-3 px-2 max-sm:landscape:mt-3 max-sm:landscape:grid-cols-3 max-sm:landscape:gap-2 max-sm:landscape:px-0 sm:grid-cols-3 md:grid-cols-none md:absolute md:top-[180px] md:mt-0 md:h-[240px] md:max-w-4xl md:gap-0 md:px-0'>
             {categories.map(([label, href, image], index) => {
@@ -80,6 +89,37 @@ export default function HomePage() {
         </div>
       </main>
       <Footer />
+      {isAboutOpen && (
+        <div
+          className='fixed inset-0 z-50 flex items-center justify-center bg-[#0b0b0b]/80 p-4'
+          role='dialog'
+          aria-modal='true'
+          aria-labelledby='about-title'
+          onClick={() => setIsAboutOpen(false)}
+        >
+          <div
+            className='relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-white/10 bg-[#121212] p-5 shadow-2xl'
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type='button'
+              onClick={() => setIsAboutOpen(false)}
+              className='absolute right-4 top-4 rounded-full bg-white/10 px-3 py-1 text-lg text-white/80 transition-colors hover:bg-white/20 hover:text-white'
+              aria-label='Cerrar Sobre mí'
+            >
+              ×
+            </button>
+            <h2 id='about-title' className='sr-only'>
+              Sobre mí
+            </h2>
+            <img
+              src='/img/foto.png'
+              alt='Anthony Duarte'
+              className='mx-auto h-auto max-h-[75vh] w-full rounded-xl object-contain'
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
