@@ -58,16 +58,22 @@ export default function Navbar() {
         >
           ▲
         </Link>
-        <Link
-          href='/'
-          aria-label='Ir al inicio'
-          className='hidden items-center gap-2 rounded-full border border-white/[0.1] px-4 py-2 text-[12px] font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white sm:flex'
-        >
-          Portafolio
-          <span aria-hidden='true' className='text-[9px] text-white/45'>
-            ▼
-          </span>
-        </Link>
+        <div className='hidden items-center gap-3 sm:flex'>
+          <Link
+            href='/'
+            aria-label='Ir al inicio'
+            className='flex size-7 items-center justify-center rounded-xl border border-white/10 bg-white text-xs font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)]'
+          >
+            ▲
+          </Link>
+          <Link
+            href='/'
+            aria-label='Ir al inicio'
+            className='flex items-center rounded-full border border-white/[0.1] px-4 py-2 text-[12px] font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white'
+          >
+            Portafolio
+          </Link>
+        </div>
       </div>
       <nav
         className='min-w-0 flex-1 relative'
