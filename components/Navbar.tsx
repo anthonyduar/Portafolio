@@ -51,16 +51,6 @@ export default function Navbar() {
   return (
     <header className='mx-auto flex w-full max-w-6xl items-center justify-between gap-3 text-[9px] text-white/45 sm:gap-5'>
       <div className='flex shrink-0 items-center gap-3'>
-        <button
-          type='button'
-          onClick={() => setIsDropdownOpen((isOpen) => !isOpen)}
-          aria-label='Abrir menú'
-          aria-expanded={isDropdownOpen}
-          aria-controls='menu-secciones'
-          className={`hidden size-7 items-center justify-center rounded-xl border border-white/10 bg-white text-xs font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)] transition-transform duration-300 sm:flex ${isDropdownOpen ? "rotate-180" : ""}`}
-        >
-          ▲
-        </button>
         <Link
           href='/'
           aria-label='Ir al inicio'
