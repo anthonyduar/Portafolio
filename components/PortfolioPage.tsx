@@ -133,6 +133,7 @@ export default function PortfolioPage({
   cardHeight = "h-[260px]",
 }: PortfolioPageProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isWhatIDoOpen, setIsWhatIDoOpen] = useState(false);
 
   useEffect(() => {
     const closeWithEscape = (event: KeyboardEvent) => {
@@ -146,9 +147,18 @@ export default function PortfolioPage({
     <div className='flex min-h-screen max-w-[1440px] flex-col justify-between overflow-y-auto bg-[#0b0b0b] px-3 py-2 text-white md:px-6'>
       <Navbar />
       <main className='my-auto py-1'>
-        <h1 className='text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl mb-6'>
-          {title}
-        </h1>
+        <div className='relative mx-auto mb-6 flex w-fit items-center justify-center'>
+          <h1 className='text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl'>
+            {title}
+          </h1>
+          <button
+            type='button'
+            onClick={() => setIsWhatIDoOpen(true)}
+            className='absolute left-full z-40 ml-4 whitespace-nowrap rounded-full border border-white/10 bg-[#121212] px-4 py-2 text-xs font-medium text-white/70 shadow-lg transition-colors hover:bg-white/[0.07] hover:text-white'
+          >
+            ¿Qué se hacer?
+          </button>
+        </div>
         <section className='mx-auto grid w-full max-w-4xl grid-cols-1 items-stretch gap-2 md:grid-cols-2'>
           {projects.map((project, index) => (
             <button
@@ -194,6 +204,34 @@ className='rounded-xl border border-white/[0.1] bg-white/[0.025] px-4 py-2 text-
           project={selectedProject}
           close={() => setSelectedProject(null)}
         />
+      )}
+      {isWhatIDoOpen && (
+        <div
+          className='fixed inset-0 z-50 flex items-center justify-center bg-[#0b0b0b]/80 p-4'
+          role='dialog'
+          aria-modal='true'
+          aria-label='Qué se hacer'
+          onClick={() => setIsWhatIDoOpen(false)}
+        >
+          <div
+            className='relative max-h-[90vh] w-full max-w-2xl rounded-2xl border border-neutral-800 bg-neutral-900 p-4 shadow-2xl'
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type='button'
+              onClick={() => setIsWhatIDoOpen(false)}
+              className='absolute right-3 top-3 z-10 rounded-full bg-neutral-800 px-3 py-1 text-lg text-white hover:bg-neutral-700'
+              aria-label='Cerrar qué se hacer'
+            >
+              ×
+            </button>
+            <img
+              src='/img/foto.png'
+              alt='Información sobre los servicios'
+              className='h-auto max-h-[80vh] w-full rounded-lg object-contain'
+            />
+          </div>
+        </div>
       )}
     </div>
   );
