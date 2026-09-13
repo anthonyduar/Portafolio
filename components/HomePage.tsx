@@ -44,7 +44,7 @@ export default function HomePage() {
             <p>| Desarrollo web |</p>
           </div>
 
-          <div className='fixed right-6 top-[30%] z-40 animate-[about-button-float_4s_ease-in-out_infinite] md:left-[calc(50%+220px)] md:right-auto md:top-[118px]'>
+          <div className='fixed right-6 top-[30%] z-40 md:left-[calc(50%+130px)] md:right-auto md:top-[118px]'>
             <button
               type='button'
               onClick={() => setIsAboutOpen(true)}
