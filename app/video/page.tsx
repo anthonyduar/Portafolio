@@ -26,7 +26,6 @@ const projects: Project[] = [
     title: "Edición Publicitaria",
     description: "Spots comerciales para marcas.",
     cover: "/img/portada-video1.png",
-    detail: "/img/portafolios/video3.png",
   },
 ];
 
