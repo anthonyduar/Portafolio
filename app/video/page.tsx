@@ -4,28 +4,28 @@ const projects: Project[] = [
   {
     title: "Edición y Montaje",
     description: "Anuncio Vertical para Redes.",
-    cover: "/img/portada-video1.png",
-    detail: "/img/portafolios/video1.png",
+    cover: "https://nz277r2pqt.ufs.sh/f/24ap935mOy9DXv4C5hjyPWx07HawSugEAf25V13zjo8BniNM",
+    detail: "https://nz277r2pqt.ufs.sh/f/24ap935mOy9Di9cjObt3ecgHAJu8s9TQCX5Z1WEkrmfzaxit",
     video: "https://player.vimeo.com/video/1219104502",
   },
   {
     title: "Edición y Montaje",
     description: "Spot Comercial Horizontal.",
-    cover: "/img/portada-video2.png",
+    cover: "https://nz277r2pqt.ufs.sh/f/24ap935mOy9DwfOLO81MzmSFvBjx5LHdoXGh967gaNiwA8eq",
     detail: "/img/portafolios/video2.png",
     video: "https://player.vimeo.com/video/1216445330",
   },
   {
     title: "Edición y Montaje",
     description: "Cápsula Deportiva.",
-    cover: "/img/portada-video3.png",
-    detail: "/img/portafolios/video3.png",
+    cover: "https://nz277r2pqt.ufs.sh/f/24ap935mOy9DwZzVho1MzmSFvBjx5LHdoXGh967gaNiwA8eq",
+    detail: "https://nz277r2pqt.ufs.sh/f/24ap935mOy9D3FJFN5niS0X6pluxb3sjKCByvHE527OWFnMh",
     video: "https://player.vimeo.com/video/1221664277",
   },
   {
     title: "Edición Publicitaria",
     description: "Spots comerciales para marcas.",
-    cover: "/img/portada-video1.png",
+    cover: "/img/edicion.png",
   },
 ];
 

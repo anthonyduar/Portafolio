@@ -20,22 +20,42 @@ export default function HomePage() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   // EFECTO AGREGADO: Escucha la tecla Escape para cerrar el modal "Sobre mí"
+   // 1. ESCUCHE DE NAVEGACIÓN: Cierra con la tecla Escape O con el botón nativo de "Atrás" del móvil
   useEffect(() => {
-    if (!isAboutOpen) return;
-
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsAboutOpen(false);
       }
     };
 
+    const handlePopState = () => {
+      setIsAboutOpen(false);
+    };
+
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("popstate", handlePopState);
     
-    // Limpia el evento cuando el modal se cierra o se desmonta el componente
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("popstate", handlePopState);
     };
+  }, []);
+
+  // 2. HISTORIAL VIRTUAL: Agrega un paso en el historial al abrir el Sobre Mí
+  useEffect(() => {
+    if (isAboutOpen) {
+      window.history.pushState({ modalOpen: true }, "");
+    }
   }, [isAboutOpen]);
+
+  // 3. MANEJADOR DE CIERRE MANUAL: Limpia el historial si cierran usando la "✕" o tocando afuera
+  const handleCloseAbout = () => {
+    setIsAboutOpen(false);
+    if (window.history.state?.modalOpen) {
+      window.history.back();
+    }
+  };
+
 
   return (
     <div className='mx-auto flex min-h-screen w-full max-w-[1440px] flex-col overflow-x-hidden bg-[#0b0b0b] px-4 py-2 text-white sm:px-6 md:px-12'>
@@ -114,14 +134,14 @@ export default function HomePage() {
       
       <Footer />
 
-      {/* MODAL SOBRE MÍ */}
+     {/* MODAL SOBRE MÍ */}
       {isAboutOpen && (
         <div
           className='fixed inset-0 z-50 flex items-center justify-center bg-[#0b0b0b]/80 p-4 animate-in fade-in duration-200'
           role='dialog'
           aria-modal='true'
           aria-labelledby='about-title'
-          onClick={() => setIsAboutOpen(false)}
+          onClick={handleCloseAbout}
         >
           <div
             className='relative max-h-[90vh] w-full max-w-2xl rounded-2xl border border-neutral-800 bg-neutral-900 p-4 shadow-2xl animate-in zoom-in-95 duration-200'
@@ -129,14 +149,14 @@ export default function HomePage() {
           >
             <button
               type='button'
-              onClick={() => setIsAboutOpen(false)}
+              onClick={handleCloseAbout}
               className='absolute right-3 top-3 z-10 rounded-full bg-neutral-800 px-3 py-1 text-lg text-white hover:bg-neutral-700 cursor-pointer'
               aria-label='Cerrar sobre mí'
             >
               ×
             </button>
             <img
-              src='/img/foto.png'
+              src='https://nz277r2pqt.ufs.sh/f/24ap935mOy9Dx6M4bxTQyCOsHqUzYwXRvFp3aeL9jQ74KoMi' //sobre mí
               alt='Anthony Duarte'
               className='h-auto max-h-[80vh] w-full rounded-lg object-contain'
             />

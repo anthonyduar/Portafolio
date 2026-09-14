@@ -90,42 +90,51 @@ function ProjectModal({
           ))
         ) : (
           <>
-            {project.video && (
-              <div className='relative mt-4 aspect-video overflow-hidden rounded-lg'>
-                <iframe
-                  src={project.video}
-                  className='absolute inset-0 h-full w-full'
-                  allow='autoplay; fullscreen; picture-in-picture'
-                  allowFullScreen
-                  title={project.title}
-                />
-              </div>
-            )}
-            {project.detail && (
-              <img
-                src={project.detail}
-                alt={`Detalle de ${project.title}`}
-                className='mt-4 h-auto w-full rounded-lg'
-              />
-            )}
-          </>
-        )}
-        {project.link && !project.repository && (
-          <div className='mt-6 text-center'>
-            <a
-              href={project.link}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='inline-block rounded-xl bg-white px-4 py-2 text-xs font-medium text-black hover:bg-gray-200'
-            >
-              Ver en la web →
-            </a>
+          {project.video && (
+          <div 
+            className={`relative mt-4 aspect-video overflow-hidden rounded-lg transition-all ${
+              project.description.toLowerCase().includes("vertical") || project.title.toLowerCase().includes("vertical")
+                ? 'bg-transparent scale-[1.10]' // 👈 Vertical: Fondo transparente y aumentado un 10% para que se vea más alto
+                : 'bg-transparent'               // 👈 Horizontal: Fondo transparente también para que se una al modal
+            }`}
+          >
+            <iframe
+              src={project.video}
+              className='absolute inset-0 h-full w-full'
+              allow='autoplay; fullscreen; picture-in-picture'
+              allowFullScreen
+              title={project.title}
+            />
           </div>
         )}
+
+
+        {project.detail && (
+          <img
+            src={project.detail}
+            alt={`Detalle de ${project.title}`}
+            className='mt-4 h-auto w-full rounded-lg'
+          />
+        )}
+      </>
+    )}
+    {project.link && !project.repository && (
+      <div className='mt-6 text-center'>
+        <a
+          href={project.link}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='inline-block rounded-xl bg-white px-4 py-2 text-xs font-medium text-black hover:bg-gray-200'
+        >
+          Ver en la web →
+        </a>
       </div>
-    </div>
-  );
+    )}
+  </div>
+</div>
+);
 }
+
 
 export default function PortfolioPage({
   title,
@@ -135,24 +144,57 @@ export default function PortfolioPage({
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isWhatIDoOpen, setIsWhatIDoOpen] = useState(false);
 
-  // UNIFICACIÓN DE ESCUCHE DE TECLADO: Cierra ambos modales con la tecla Escape
+  // CONTROL DE NAVEGACIÓN: Cierra con la tecla Escape O con el botón nativo de "Atrás" del móvil
   useEffect(() => {
     const closeWithEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setSelectedProject(null);
-        setIsWhatIDoOpen(false); // Línea agregada para cerrar el modal "¿Qué sé hacer?"
+        setIsWhatIDoOpen(false);
       }
     };
+
+    const handlePopState = () => {
+      setSelectedProject(null);
+      setIsWhatIDoOpen(false);
+    };
+
     document.addEventListener("keydown", closeWithEscape);
-    return () => document.removeEventListener("keydown", closeWithEscape);
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      document.removeEventListener("keydown", closeWithEscape);
+      window.removeEventListener("popstate", handlePopState);
+    };
   }, []);
 
-    return (
+  // HISTORIAL VIRTUAL: Agrega un paso en el historial del navegador al abrir un modal
+  useEffect(() => {
+    if (selectedProject || isWhatIDoOpen) {
+      window.history.pushState({ modalOpen: true }, "");
+    }
+  }, [selectedProject, isWhatIDoOpen]);
+
+  // MANEJADORES DE CIERRE MANUAL (Limpian el historial virtual al usar las "✕")
+  const handleCloseProject = () => {
+    setSelectedProject(null);
+    if (window.history.state?.modalOpen) {
+      window.history.back();
+    }
+  };
+
+  const handleCloseWhatIDo = () => {
+    setIsWhatIDoOpen(false);
+    if (window.history.state?.modalOpen) {
+      window.history.back();
+    }
+  };
+
+  return (
     <div className='flex min-h-screen max-w-[1440px] flex-col justify-between overflow-y-auto bg-[#0b0b0b] px-3 py-2 text-white md:px-6'>
       <Navbar />
 
       {/* 1. <main> regresa a su espaciado base limpio */}
-<main className='flex flex-1 flex-col items-center justify-start pt-10 pb-4 max-sm:landscape:flex-none max-sm:landscape:pt-10 max-sm:landscape:pb-4 md:pt-24 md:pb-5'>        
+      <main className='flex flex-1 flex-col items-center justify-start pt-10 pb-4 max-sm:landscape:flex-none max-sm:landscape:pt-10 max-sm:landscape:pb-4 md:pt-24 md:pb-5'>        
         {/* 2. Se añade max-sm:portrait:mt-8 aquí para separar el título de la barra sin empujar las tarjetas */}
         <div className='relative mx-auto mb-6 max-sm:portrait:mt-8 flex w-fit items-center justify-center'>
           <h1 className='text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl'>
@@ -171,7 +213,7 @@ export default function PortfolioPage({
         </div>
 
 
-<section className='mx-auto grid w-full max-w-4xl grid-cols-1 items-stretch gap-2 md:grid-cols-2 max-sm:portrait:-mt-3'>          {projects.map((project, index) => (
+        <section className='mx-auto grid w-full max-w-4xl grid-cols-1 items-stretch gap-2 md:grid-cols-2 max-sm:portrait:-mt-3'>          {projects.map((project, index) => (
             <button
               type='button'
               key={project.title}
@@ -218,7 +260,7 @@ export default function PortfolioPage({
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
-          close={() => setSelectedProject(null)}
+          close={handleCloseProject}
         />
       )}
 
@@ -228,7 +270,7 @@ export default function PortfolioPage({
           role='dialog'
           aria-modal='true'
           aria-label='Qué sé hacer'
-          onClick={() => setIsWhatIDoOpen(false)}
+          onClick={handleCloseWhatIDo}
         >
           <div
             className='relative max-h-[90vh] w-full max-w-2xl rounded-2xl border border-neutral-800 bg-neutral-900 p-4 shadow-2xl'
@@ -236,7 +278,7 @@ export default function PortfolioPage({
           >
             <button
               type='button'
-              onClick={() => setIsWhatIDoOpen(false)}
+              onClick={handleCloseWhatIDo}
               className='absolute right-3 top-3 z-10 rounded-full bg-neutral-800 px-3 py-1 text-lg text-white hover:bg-neutral-700'
               aria-label='Cerrar modal'
             >
@@ -249,3 +291,4 @@ export default function PortfolioPage({
     </div>
   );
 }
+
