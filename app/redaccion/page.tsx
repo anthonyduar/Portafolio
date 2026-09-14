@@ -4,29 +4,41 @@ const projects: Project[] = [
   {
     title: "Redacción SEO",
     description: "Artículo de eCommerce.",
-    cover: "/img/portafolios/articulo2.png",
-    detail: "/img/portafolios/articulo2.png",
+    cover: "/img/portafolios/portada-articulo2.png",
+    media: [
+      { type: "image", url: "/img/portafolios/articulo2-1.png" }, 
+      { type: "image", url: "/img/portafolios/articulo2.png" }  
+    ],
     link: "https://eparadise.vercel.app/articulo/jbl-go-4",
   },
-  {
-    title: "Redacción Periodística",
-    description: "Noticia Deportiva.",
-    cover: "/img/portafolios/noticia1.png",
-    detail: "/img/portafolios/noticia1.png",
+    {
+    title: "Noticia Periodística",
+    description: "Periodismo deportivo.",
+    cover: "/img/portafolios/portada-noticia1.png",
+    media: [
+      { type: "image", url: "/img/portafolios/noticia1-1.png" }, 
+      { type: "image", url: "/img/portafolios/noticia1.png" }  
+    ],
     link: "https://actualnow.vercel.app/shai-record-thunder-celtics",
   },
   {
-    title: "Redacción SEO",
+     title: "Redacción SEO",
     description: "Artículo de eCommerce.",
-    cover: "/img/portafolios/articulo1.png",
-    detail: "/img/portafolios/articulo1.png",
-    link: "https://eparadise.vercel.app/articulo/mundo-jurásico-divertido",
+    cover: "/img/portafolios/portada-articulo1.png",
+    media: [
+      { type: "image", url: "/img/portafolios/articulo2-1.png" }, 
+      { type: "image", url: "/img/portafolios/articulo2.png" }  
+    ],
+    link: "https://eparadise.vercel.app/articulo/mundo-jur%C3%A1sico-divertido",
   },
-  {
-    title: "Redacción Periodística",
-    description: "Noticia Deportiva.",
-    cover: "/img/portafolios/noticia2.png",
-    detail: "/img/portafolios/noticia2.png",
+   {
+    title: "Noticia Periodística",
+    description: "Periodismo deportivo.",
+    cover: "/img/portafolios/portada-noticia2.png",
+    media: [
+      { type: "image", url: "/img/portafolios/noticia2-1.png" }, 
+      { type: "image", url: "/img/portafolios/noticia2.png" }  
+    ],
     link: "https://actualnow.vercel.app/venezuela-eeuu-wbc",
   },
 ];

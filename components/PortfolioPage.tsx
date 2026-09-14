@@ -44,29 +44,29 @@ function ProjectModal({
         >
           ✕
         </button>
-    {project.repository && (
-      <div className='mb-4 flex items-center justify-center gap-3'>
-        {project.link && (
-          <a
-            href={project.link}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='inline-block rounded-xl border border-white/10 bg-[#0d1117] px-4 py-2 text-xs font-medium text-white transition-all hover:border-white/20 hover:bg-[#2f363d]'
-          >
-            Ver sitio en vivo 🌐
-          </a>
+        {project.repository && (
+          <div className='mb-4 flex items-center justify-center gap-3'>
+            {project.link && (
+              <a
+                href={project.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-block rounded-xl border border-white/10 bg-[#0d1117] px-4 py-2 text-xs font-medium text-white transition-all hover:border-white/20 hover:bg-[#2f363d]'
+              >
+                Ver sitio en vivo 🌐
+              </a>
+            )}
+            <a
+              href={project.repository}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-block rounded-xl border border-white/10 bg-[#0d1117] px-4 py-2 text-xs font-medium text-white transition-all hover:border-white/20 hover:bg-[#2f363d]'
+            >
+              Ver repositorio →
+            </a>
+          </div>
         )}
-        <a
-          href={project.repository}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='inline-block rounded-xl border border-white/10 bg-[#0d1117] px-4 py-2 text-xs font-medium text-white transition-all hover:border-white/20 hover:bg-[#2f363d]'
-        >
-          Ver repositorio →
-        </a>
-      </div>
-    )}
-    {project.media ? (
+        {project.media ? (
           project.media.map((item, index) => (
             <div key={index} className='mt-4 first:mt-0'>
               {item.type === 'video' ? (
@@ -135,32 +135,43 @@ export default function PortfolioPage({
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isWhatIDoOpen, setIsWhatIDoOpen] = useState(false);
 
+  // UNIFICACIÓN DE ESCUCHE DE TECLADO: Cierra ambos modales con la tecla Escape
   useEffect(() => {
     const closeWithEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setSelectedProject(null);
+      if (event.key === "Escape") {
+        setSelectedProject(null);
+        setIsWhatIDoOpen(false); // Línea agregada para cerrar el modal "¿Qué sé hacer?"
+      }
     };
     document.addEventListener("keydown", closeWithEscape);
     return () => document.removeEventListener("keydown", closeWithEscape);
   }, []);
 
-  return (
+    return (
     <div className='flex min-h-screen max-w-[1440px] flex-col justify-between overflow-y-auto bg-[#0b0b0b] px-3 py-2 text-white md:px-6'>
       <Navbar />
-      <main className='my-auto py-1'>
-        <div className='relative mx-auto mb-6 flex w-fit items-center justify-center'>
+
+      {/* 1. <main> regresa a su espaciado base limpio */}
+<main className='flex flex-1 flex-col items-center justify-start pt-10 pb-4 max-sm:landscape:flex-none max-sm:landscape:pt-10 max-sm:landscape:pb-4 md:pt-24 md:pb-5'>        
+        {/* 2. Se añade max-sm:portrait:mt-8 aquí para separar el título de la barra sin empujar las tarjetas */}
+        <div className='relative mx-auto mb-6 max-sm:portrait:mt-8 flex w-fit items-center justify-center'>
           <h1 className='text-center text-5xl font-medium leading-none tracking-[-0.08em] text-[#e8e7e2] sm:text-6xl md:text-7xl lg:text-7xl'>
             {title}
           </h1>
+          
+          {/* BOTÓN ¿QUÉ SÉ HACER? */}
           <button
             type='button'
             onClick={() => setIsWhatIDoOpen(true)}
-            className='absolute left-full z-40 ml-4 whitespace-nowrap rounded-full border border-white/10 bg-[#121212] px-4 py-2 text-xs font-medium text-white/70 shadow-lg transition-colors hover:bg-white/[0.07] hover:text-white'
+            className='absolute left-full z-40 ml-4 whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 text-xs font-medium text-white/55 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-md transition-all hover:bg-white/[0.07] hover:text-white cursor-pointer select-none'
           >
-            ¿Qué se hacer?
+            <span className='sm:hidden'>¿?</span>
+            <span className='hidden sm:inline'>¿Qué sé hacer?</span>
           </button>
         </div>
-        <section className='mx-auto grid w-full max-w-4xl grid-cols-1 items-stretch gap-2 md:grid-cols-2'>
-          {projects.map((project, index) => (
+
+
+<section className='mx-auto grid w-full max-w-4xl grid-cols-1 items-stretch gap-2 md:grid-cols-2 max-sm:portrait:-mt-3'>          {projects.map((project, index) => (
             <button
               type='button'
               key={project.title}
@@ -188,29 +199,35 @@ export default function PortfolioPage({
           ))}
         </section>
       </main>
-      <div className='flex justify-center py-4'>
+
+      {/* BOTÓN VOLVER AL INICIO */}
+      <div className='flex justify-center pb-8 sm:landscape:mt-8 md:mt-8 md:pb-0'>
         <Link
           href='/'
-className='rounded-xl border border-white/[0.1] bg-white/[0.025] px-4 py-2 text-xs font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white'        >
+          className='rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-2 text-xs font-medium text-white/55 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-md transition-all hover:bg-white/[0.07] hover:text-white select-none'
+        >
           <span className='mr-2' aria-hidden='true'>
             ←
           </span>
           Volver al inicio
         </Link>
       </div>
+
       <Footer />
+
       {selectedProject && (
         <ProjectModal
           project={selectedProject}
           close={() => setSelectedProject(null)}
         />
       )}
+
       {isWhatIDoOpen && (
         <div
           className='fixed inset-0 z-50 flex items-center justify-center bg-[#0b0b0b]/80 p-4'
           role='dialog'
           aria-modal='true'
-          aria-label='Qué se hacer'
+          aria-label='Qué sé hacer'
           onClick={() => setIsWhatIDoOpen(false)}
         >
           <div
@@ -221,15 +238,11 @@ className='rounded-xl border border-white/[0.1] bg-white/[0.025] px-4 py-2 text-
               type='button'
               onClick={() => setIsWhatIDoOpen(false)}
               className='absolute right-3 top-3 z-10 rounded-full bg-neutral-800 px-3 py-1 text-lg text-white hover:bg-neutral-700'
-              aria-label='Cerrar qué se hacer'
+              aria-label='Cerrar modal'
             >
-              ×
+              ✕
             </button>
-            <img
-              src='/img/foto.png'
-              alt='Información sobre los servicios'
-              className='h-auto max-h-[80vh] w-full rounded-lg object-contain'
-            />
+            <p className='text-sm text-gray-300'>Contenido del modal...</p>
           </div>
         </div>
       )}

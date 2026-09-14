@@ -1,24 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-const mainLinks = [
+const portfolioLinks = [
   ["Redacción", "/redaccion"],
+  ["Diseño", "/diseno"],
+  ["Desarrollo Web", "/web"],
+  ["Motion Graphics", "/motion"],
   ["Marketing Digital", "/marketing"],
   ["Edición de Video", "/video"],
 ];
 
-const dropdownLinks = [
-  ["Diseño", "/diseno"],
-  ["Motion Graphics", "/motion"],
-  ["Desarrollo Web", "/web"],
-];
-
-export default function Navbar() {
+export default function Navbar({ hidePortfolio = false }: { hidePortfolio?: boolean }) {
   const [locationTime, setLocationTime] = useState("Cargando...");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // Referencia para detectar clics externos en el navbar
+  const navbarRef = useRef<HTMLDivElement>(null);
 
+  // 1. Efecto para manejar la ubicación y la hora local
   useEffect(() => {
     let active = true;
     const updateLocationTime = async () => {
@@ -28,15 +29,16 @@ export default function Navbar() {
       });
       let country = "Local";
       try {
-        const response = await fetch("https://ipapi.co/json/");
+        // CORRECCIÓN DEFINITIVA: Formato JSON para evitar fallos de lectura
+        const response = await fetch("https://ipapi.co");
         const data = await response.json();
         country = data.country_name || country;
       } catch {
-        country =
-          Intl.DateTimeFormat()
-            .resolvedOptions()
-            .timeZone.split("/")[1]
-            ?.replace("_", " ") || country;
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        if (tz) {
+          const parts = tz.split("/");
+          country = parts[parts.length - 1]?.replace("_", " ") || "Local";
+        }
       }
       if (active) setLocationTime(`${country} — ${time}`);
     };
@@ -48,98 +50,89 @@ export default function Navbar() {
     };
   }, []);
 
+  // 2. Efecto para cerrar con Clic Afuera y tecla Escape
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
+
   return (
-    <header className='mx-auto flex w-full max-w-6xl items-center justify-between gap-3 text-[9px] text-white/45 sm:gap-5'>
-      <div className='flex shrink-0 items-center gap-3'>
-        <Link
-          href='/'
-          aria-label='Ir al inicio'
-          className='flex size-7 items-center justify-center rounded-xl border border-white/10 bg-white text-xs font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)] sm:hidden'
-        >
-          ▲
-        </Link>
-        <div className='hidden items-center gap-3 sm:flex'>
-          <Link
-            href='/'
-            aria-label='Ir al inicio'
-            className='flex size-7 items-center justify-center rounded-xl border border-white/10 bg-white text-xs font-bold text-black shadow-[0_0_24px_rgba(255,255,255,0.08)]'
-          >
-            ▲
-          </Link>
-          <Link
-            href='/'
-            aria-label='Ir al inicio'
-            className='flex items-center rounded-full border border-white/[0.1] px-4 py-2 text-[12px] font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white'
-          >
-            Portafolio
-          </Link>
-        </div>
-      </div>
-      <nav
-        className='min-w-0 flex-1 relative'
-        aria-label='Navegación principal'
-      >
-        {/* Tu contenedor original se mantiene intacto con su overflow-x-auto */}
-        <div className='mx-auto flex w-fit max-w-full items-center gap-0.5 overflow-x-auto rounded-full border border-white/[0.1] bg-white/[0.025] px-2 py-1.5 md:px-3 md:py-2'>
-          {/* 1. Enlaces Principales */}
-          {mainLinks.map(([label, href]) => (
-            <Link
-              key={href}
-              href={href}
-              className='whitespace-nowrap rounded-full px-1.5 py-2 text-[11px] md:text-[12px] font-medium transition-colors hover:bg-white/[0.07] hover:text-white md:px-3.5'
-            >
-              {label}
-            </Link>
-          ))}
-
-          <button
-            type='button'
-            onClick={() => setIsDropdownOpen((isOpen) => !isOpen)}
-            aria-label='Abrir secciones'
-            aria-expanded={isDropdownOpen}
-            aria-controls='menu-secciones'
-            className={`flex items-center justify-center px-2 py-2 text-[11px] font-bold text-white/45 transition-transform duration-300 md:hidden ${isDropdownOpen ? "rotate-180" : ""}`}
-          >
-            ▼
-          </button>
-
-          {/* 2. Enlaces Secundarios para Escritorio */}
-          <div className='hidden md:flex items-center gap-0.5'>
-            {dropdownLinks.map(([label, href]) => (
-              <Link
-                key={href}
-                href={href}
-                className='whitespace-nowrap rounded-full px-2.5 py-2 text-[12px] font-medium transition-colors hover:bg-white/[0.07] hover:text-white md:px-3.5'
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* 💡 EL TRUCO: El submenú ahora se renderiza AQUÍ AFUERA. 
-            Está libre del overflow-x-auto y centrado de forma simétrica justo abajo de la barra */}
-        {isDropdownOpen && (
-          <div
-            id='menu-secciones'
-            className='absolute top-12 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-1 min-w-[145px] rounded-xl border border-white/10 bg-[#0b0b0b]/95 p-2 shadow-2xl backdrop-blur-md pointer-events-auto animate-in fade-in slide-in-from-top-2 duration-150'
-          >
-            {dropdownLinks.map(([label, href]) => (
-              <Link
-                key={href}
-                href={href}
-                onClick={() => setIsDropdownOpen(false)} // Cierra el menú al hacer clic
-                className='whitespace-nowrap rounded-lg px-3 py-2 text-[12px] font-medium text-white/65 transition-colors hover:bg-white/[0.07] hover:text-white text-center'
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-        )}
-      </nav>
-      <div className='hidden shrink-0 rounded-full border border-white/[0.1] px-3 py-2 text-[12px] font-medium text-white/55 sm:block select-none'>
+    <>
+      {/* UBICACIÓN Y HORA: Fuera del navbar, arriba a la derecha */}
+      <div className='absolute top-4 right-6 z-40 hidden rounded-full border border-white/[0.08] bg-white/[0.02] px-3 py-1.5 text-[11px] font-medium text-white/55 backdrop-blur-md sm:block select-none'>
         {locationTime}
       </div>
-    </header>
+
+      {/* NAVBAR PRINCIPAL: Más corto, compacto y centrado */}
+      <header className='fixed top-4 left-1/2 z-50 w-full max-w-xs -translate-x-1/2 px-4'>
+        <div 
+          ref={navbarRef}
+          className='relative w-full rounded-2xl border border-white/[0.08] bg-white/[0.02] p-3 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-md transition-all duration-300'
+        >
+          
+          <div className='flex items-center justify-between px-2'>
+            {/* LADO IZQUIERDO: Palabra cliqueable con color corregido a gris como la hora */}
+            <Link 
+              href='/' 
+              onClick={() => setIsMenuOpen(false)}
+              className='text-sm font-semibold tracking-wide text-white/55 transition-colors hover:text-white duration-200 select-none'
+            >
+              Portafolio
+            </Link>
+
+            {/* LADO DERECHO: 3 Rayas minimalistas */}
+            <button
+              type='button'
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              aria-label='Abrir menú de navigation'
+              aria-expanded={isMenuOpen}
+              className='flex h-6 w-6 cursor-pointer flex-col justify-center gap-1.5 p-1'
+            >
+              <span className={`h-[1.5px] w-5 bg-white/80 transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-[5px]" : ""}`} />
+              <span className={`h-[1.5px] w-5 bg-white/80 transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`} />
+              <span className={`h-[1.5px] w-5 bg-white/80 transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-[5px]" : ""}`} />
+            </button>
+          </div>
+
+          {/* MENÚ DESPLEGABLE CON LOS LINKS INTERNOS */}
+          {isMenuOpen && (
+            <nav 
+              className='mt-3 flex flex-col gap-1 border-t border-white/[0.05] pt-3 animate-in fade-in slide-in-from-top-2 duration-200'
+              aria-label='Enlaces de portafolio'
+            >
+              {portfolioLinks.map(([label, href]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className='rounded-xl px-4 py-2 text-xs font-medium text-white/60 transition-all hover:bg-white/[0.05] hover:text-white text-center'
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          )}
+        </div>
+      </header>
+    </>
   );
 }
