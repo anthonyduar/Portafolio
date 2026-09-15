@@ -96,7 +96,8 @@ export default function HomePage() {
 </button>
 
           {/* GRID DE CATEGORÍAS */}
-<div className='relative mt-6 max-sm:portrait:mt-14 grid w-full grid-cols-2 gap-3 px-2 max-sm:landscape:mt-2 max-sm:landscape:grid-cols-3 max-sm:landscape:gap-2 max-sm:landscape:px-0 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-none lg:absolute lg:top-[140px] lg:mt-0 lg:h-[240px] lg:max-w-4xl lg:gap-0 lg:px-0'>            {categories.map(([label, href, image], index) => {
+          <div className='relative mt-6 max-sm:portrait:mt-14 grid w-full grid-cols-2 gap-3 px-2 max-sm:landscape:mt-2 max-sm:landscape:grid-cols-3 max-sm:landscape:gap-2 max-sm:landscape:px-0 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-none lg:absolute lg:top-[140px] lg:mt-0 lg:h-[240px] lg:max-w-4xl lg:gap-0 lg:px-0'>            
+            {categories.map(([label, href, image], index) => {
               const positions = [
                 "lg:left-0 lg:-top-[10px]",
                 "lg:left-[12%] lg:top-[62px]",
@@ -109,9 +110,23 @@ export default function HomePage() {
                 <Link
                   key={href}
                   href={href}
-                  onMouseEnter={() => setTitle(label)}
-                  onMouseLeave={() => setTitle("Anthony Duarte")}
-                  className={`group relative flex h-[94px] w-full overflow-hidden rounded-xl border border-white/[0.11] bg-[#101010] p-3 transition-all duration-500 shadow-[0_12px_30px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.2)] hover:z-10 hover:-translate-y-1 hover:border-white/30 max-sm:landscape:h-[60px] max-sm:landscape:rounded-lg max-sm:landscape:p-2 sm:h-[80px] lg:absolute lg:h-[106px] lg:w-[230px] ${positions[index]}`}
+                  className={`group relative flex h-[94px] w-full overflow-hidden rounded-xl border border-white/[0.11] bg-[#101010] p-3 transition-all duration-500 shadow-[0_12px_30px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.2)] hover:z-10 hover:border-white/30 max-sm:landscape:h-[60px] max-sm:landscape:rounded-lg max-sm:landscape:p-2 sm:h-[80px] lg:absolute lg:h-[106px] lg:w-[230px] ${positions[index]}`}
+                  // ESTILO INICIAL: Prepara las variables CSS para que la animación sea fluida desde el centro
+                  style={{
+                    transform: "scale(var(--scale, 1)) translateY(var(--translate-y, 0px))",
+                    transformOrigin: "center center"
+                  }}
+                  // MANEJADORES ÚNICOS: Modificamos el título, la escala y la elevación al mismo tiempo (SIN DUPLICADOS)
+                  onMouseEnter={(e) => {
+                    setTitle(label);
+                    e.currentTarget.style.setProperty("--scale", "1.20"); // 👈 Forzar agrandado al 8%
+                    e.currentTarget.style.setProperty("--translate-y", "-4px"); // 👈 Eleva la tarjeta 4px
+                  }}
+                  onMouseLeave={(e) => {
+                    setTitle("Anthony Duarte");
+                    e.currentTarget.style.setProperty("--scale", "1");
+                    e.currentTarget.style.setProperty("--translate-y", "0px");
+                  }}
                 >
                   <img
                     src={image}

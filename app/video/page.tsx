@@ -12,7 +12,7 @@ const projects: Project[] = [
     title: "Edición y Montaje",
     description: "Spot Comercial Horizontal.",
     cover: "https://nz277r2pqt.ufs.sh/f/24ap935mOy9DwfOLO81MzmSFvBjx5LHdoXGh967gaNiwA8eq",
-    detail: "/img/portafolios/video2.png",
+    detail: "https://nz277r2pqt.ufs.sh/f/24ap935mOy9DNvHzgaHwKi4RfuHx5kbIQhTPFt0z1SyD8lcn",
     video: "https://player.vimeo.com/video/1216445330",
   },
   {

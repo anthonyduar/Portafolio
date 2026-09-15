@@ -29,7 +29,7 @@ const projects: Project[] = [
       { type: "image", url: "https://nz277r2pqt.ufs.sh/f/24ap935mOy9Di9rnnB3ecgHAJu8s9TQCX5Z1WEkrmfzaxitR" }, //redaccion3-1 
       { type: "image", url: "https://nz277r2pqt.ufs.sh/f/24ap935mOy9DGpgU8aBPnYgzdyJIF4cj2bwEXSRTH1Q5xLDm" } //redaccion3 
     ],
-    link: "https://eparadise.vercel.app/articulo/mundo-jur%C3%A1sico-divertido",
+    link: "https://eparadise.vercel.app/articulo/mundo-jurasico-divertido",
   },
    {
     title: "Redacción Periodística",

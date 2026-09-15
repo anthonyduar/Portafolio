@@ -202,18 +202,31 @@ export default function PortfolioPage({
           </h1>
           
           {/* BOTÓN ¿QUÉ SÉ HACER? */}
-          <button
+                    <button
             type='button'
             onClick={() => setIsWhatIDoOpen(true)}
-            className='absolute left-full z-40 ml-4 whitespace-nowrap rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 text-xs font-medium text-white/55 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-md transition-all hover:bg-white/[0.07] hover:text-white cursor-pointer select-none'
+            className='absolute left-full z-40 ml-4 flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.02] text-white/55 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] backdrop-blur-md transition-all hover:bg-white/[0.07] hover:text-white cursor-pointer select-none hover:scale-105'
+            aria-label='¿Qué sé hacer?'
           >
-            <span className='sm:hidden'>¿?</span>
-            <span className='hidden sm:inline'>¿Qué sé hacer?</span>
+            {/* Icono de Información Circular y Estilizado */}
+            <svg
+              xmlns='http://w3.org'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={2}
+              stroke='currentColor'
+              className='h-8 w-8'
+            >
+              <circle cx='12' cy='12' r='10' />
+              <path strokeLinecap='round' d='M12 16v-4' />
+              <path strokeLinecap='round' d='M12 8h.01' />
+            </svg>
           </button>
         </div>
 
 
-        <section className='mx-auto grid w-full max-w-4xl grid-cols-1 items-stretch gap-2 md:grid-cols-2 max-sm:portrait:-mt-3'>          {projects.map((project, index) => (
+        <section className='mx-auto grid w-full max-w-4xl grid-cols-1 items-stretch gap-2 md:grid-cols-2 max-sm:portrait:-mt-3 lg:mt-1'>
+          {projects.map((project, index) => (
             <button
               type='button'
               key={project.title}
