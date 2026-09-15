@@ -88,45 +88,24 @@ function ProjectModal({
               )}
             </div>
           ))
-                ) : (
+                        ) : (
           <>
             {project.video && (
-              <>
-                <div 
-                  className={`relative mt-4 overflow-hidden rounded-lg transition-all ${
-                    project.description.toLowerCase().includes("vertical") || project.title.toLowerCase().includes("vertical")
-                      ? 'aspect-[9/16] max-w-[280px] mx-auto' // 👈 Proporción de video vertical de teléfono y centrado
-                      : 'aspect-video w-full'                 // 👈 Proporción horizontal clásica
-                  }`}
-                >
-                  <iframe
-                    src={project.video}
-                    className='absolute inset-0 h-full w-full'
-                    allow='autoplay; fullscreen; picture-in-picture'
-                    allowFullScreen
-                    title={project.title}
-                  />
-                </div>
-
-                {/* 👇 AVISO PARA GIRAR SÓLO EN VIDEOS HORIZONTALES */}
-                {!(project.description.toLowerCase().includes("vertical") || project.title.toLowerCase().includes("vertical")) && (
-                  <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/95 p-6 text-center sm:hidden landscape:hidden">
-                    <div className="w-16 h-16 mb-4 flex items-center justify-center border border-white/10 rounded-2xl animate-pulse">
-                      <svg className="w-8 h-8 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
-                        <rect x="5" y="2" width="14" height="20" rx="2" className="opacity-30" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 12a8 8 0 018-8m0 16a8 8 0 01-8-8" />
-                      </svg>
-                    </div>
-                    <p className="text-white/90 text-xs font-light tracking-widest uppercase">
-                      Por favor, gira tu pantalla
-                    </p>
-                    <span className="text-white/40 text-[10px] mt-1 font-light tracking-wide">
-                      Para una mejor experiencia visual
-                    </span>
-                  </div>
-                )}
-              </>
+              <div 
+                className={`relative mt-4 overflow-hidden rounded-lg transition-all w-full mx-auto ${
+                  project.description.toLowerCase().includes("horizontal") || project.description.toLowerCase().includes("spot")
+                    ? 'aspect-video'          // 👈 Horizontal al 100% de ancho sin deformarse
+                    : 'aspect-[9/16] max-w-[85vw] md:max-w-[340px]' // 👈 Vertical imponente (85% del ancho de la pantalla en móvil)
+                }`}
+              >
+                <iframe
+                  src={project.video}
+                  className='absolute inset-0 h-full w-full'
+                  allow='autoplay; fullscreen; picture-in-picture'
+                  allowFullScreen
+                  title={project.title}
+                />
+              </div>
             )}
 
             {project.detail && (
@@ -155,9 +134,11 @@ function ProjectModal({
   );
 }
 
+
 export default function PortfolioPage({
   title,
   projects,
+
 
   cardHeight = "h-[260px]",
 }: PortfolioPageProps) {
