@@ -88,14 +88,14 @@ function ProjectModal({
               )}
             </div>
           ))
-                        ) : (
+                                 ) : (
           <>
             {project.video && (
               <div 
-                className={`relative mt-4 overflow-hidden rounded-lg transition-all w-full mx-auto ${
+                className={`relative mt-4 md:-mt-1 overflow-hidden rounded-lg transition-all w-full mx-auto ${
                   project.description.toLowerCase().includes("horizontal") || project.description.toLowerCase().includes("spot")
-                    ? 'aspect-video'          // 👈 Horizontal al 100% de ancho sin deformarse
-                    : 'aspect-[9/16] max-w-[85vw] md:max-w-[340px]' // 👈 Vertical imponente (85% del ancho de la pantalla en móvil)
+                    ? 'aspect-[16/10]' // 👈 SÓLO el horizontal se hace más alto en desktop
+                    : 'aspect-[9/16] max-w-[85vw] md:max-w-[315px] -mt-4 md:mt-0'
                 }`}
               >
                 <iframe
@@ -107,6 +107,7 @@ function ProjectModal({
                 />
               </div>
             )}
+
 
             {project.detail && (
               <img
@@ -133,7 +134,6 @@ function ProjectModal({
     </div>
   );
 }
-
 
 export default function PortfolioPage({
   title,
